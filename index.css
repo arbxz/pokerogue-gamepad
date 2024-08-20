@@ -267,7 +267,6 @@ input:-internal-autofill-selected {
 
 .apad-label {
   user-select: none;
-  height: 100%;
   margin-right: -2px;
 }
 
@@ -409,7 +408,7 @@ a {
     animation: blink normal 4s infinite ease-in-out; /* Opera and prob css3 final iteration */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   footer {
     flex-direction: column;
   }
