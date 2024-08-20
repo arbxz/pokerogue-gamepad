@@ -3,18 +3,38 @@
   --color-base: hsl(0, 0%, 55%);
   --color-light: hsl(0, 0%, 90%);
   --color-dark: hsl(0, 0%, 10%);
+  --color-blue: hsl(222, 39%, 30%)
 }
 
 html {
   touch-action: none;
 }
 
-body {
-  margin: 0;
+.content {
   display:flex;
   flex-direction: column;
   align-items: center;
-  background: #484050;
+  background: var(--color-blue);
+}
+
+footer{
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 16px;
+  background-color: var(--color-blue);
+}
+
+footer a {
+  padding: 4px 8px;
+  color: white;
+  font-size: 16px;
+  font-family: 'pkmnems';
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 32px;
 }
 
 #links {
@@ -29,6 +49,12 @@ body {
 #app {
   display: flex;
   justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+#app > canvas {
+  width: 100% !important;
 }
 
 #app > div:first-child {
@@ -102,7 +128,7 @@ input:-internal-autofill-selected {
 }
 
 .control-group {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -381,4 +407,14 @@ a {
     -webkit-animation: blink normal 4s infinite ease-in-out; /* Webkit */
     -ms-animation: blink normal 4s infinite ease-in-out; /* IE */
     animation: blink normal 4s infinite ease-in-out; /* Opera and prob css3 final iteration */
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+  }
+
+  #app > canvas {
+    width: auto !important;
+  }
 }
